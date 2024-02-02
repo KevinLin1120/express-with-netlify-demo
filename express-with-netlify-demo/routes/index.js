@@ -1,4 +1,5 @@
 var express = require('express');
+const path = require('path');
 var router = express.Router();
 // 指定靜態文件目錄
 router.use(express.static('views'));
@@ -16,7 +17,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/html', function(req, res, next) {
   // res.render('index', { title: 'Express' });
-  res.sendFile('test.html', {root: 'views'}, (err) => {
+  res.sendFile(path.join(__dirname, 'views', 'test.html'), (err) => {
     if (err) {
       console.error(`Error sending file: ${err}`);
       res.status(500).send('Internal Server Error');
