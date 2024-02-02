@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 router.get('/html', function(req, res, next) {
   // res.render('index', { title: 'Express' });
   // res.sendFile('test.html', {root: 'views'}, (err) => {
-  res.sendFile(path.join(process.cwd(), 'views', 'test.html'), (err) => {
+  res.sendFile(path.join(process.cwd(), '../views', 'test.html'), (err) => {
     if (err) {
       console.error(`Error sending file: ${err}`);
       res.status(500).send('Internal Server Error');
