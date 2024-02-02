@@ -1,15 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var path = require("path");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // res.render('index', { title: 'Express' });
-  res.sendFile('index.html', { root: views });
+  res.sendFile(path.join(__dirname, '../../../../views', 'index.html'));
 });
 
 router.get('/html', function(req, res, next) {
   // res.render('index', { title: 'Express' });
-  res.sendFile('test.html', { root: views });
+  res.sendFile(path.join(__dirname, '../../../../views', 'test.html'));
 });
 
 module.exports = router;
