@@ -5,7 +5,7 @@ var path = require("path");
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // res.render('index', { title: 'Express' });
-  res.sendFile('index.html', { root: path.join(process.cwd(), 'public') }, (err) => {
+  res.sendFile('index.html', { root: path.join(__dirname, 'public') }, (err) => {
     if (err) {
       console.error(`Error sending file: ${err}`);
       res.status(500).send('Internal Server Error');
