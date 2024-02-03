@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var path = require("path");
-// 指定靜態文件目錄
-router.use(express.static('public'));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
