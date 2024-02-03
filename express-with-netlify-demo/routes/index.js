@@ -24,13 +24,4 @@ router.get('/html', function(req, res, next) {
   });
 });
 
-router.get('/static', function(req, res, next) {
-  res.sendFile(path.join(process.cwd(),  'html.html'), (err) => {
-    if (err) {
-      console.error(`Error sending file: ${err}`);
-      res.status(500).send('Internal Server Error');
-    }
-  });
-});
-
 module.exports = router;
